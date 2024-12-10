@@ -6,7 +6,9 @@
 
 
 :root {
-    font-size: 62.5%
+    font-size: 62.5%;
+    --default-border: 0.1rem solid rgba(0, 0, 0, 0.15);
+    --border-radius: 1.2rem;
 }
 
 /* 180px equivale a 18rem e 20px equivale a 2.0rem ------------------------------------------------------------------------------*/
@@ -49,9 +51,9 @@ span {
 main {
     width: 60rem;
     height: 52rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.15);
+    border: var(--default-border);
     padding: 4.4rem 5.7rem;
-    border-radius: 1.2rem;
+    border-radius: var(--border-radius);
 }
 
 main h2 {
@@ -67,7 +69,7 @@ main .actions {
 }
 
 main .actions a { /*Dessa forma so vai aparece o estilos no main que tiver a class action */
-    border-radius: 1.2rem;
+    border-radius: var(--border-radius);
     text-decoration: none;
     font-size: 2.4rem;
     height: 5.5rem;
@@ -85,10 +87,21 @@ main .actions a + a {
     margin-top: 4.8rem;
 }
 
+main header {
+     display: flex;
+     gap: 0 1.0rem;
+     align-items: center;
+}
+
+main header i {
+    font-size: 2.4rem;
+    color: #FF5678;
+    
+}
+
 main footer p {
     font-size: 1.6rem;
     margin-top: 8rem;
-
 }
 
 main footer a {
@@ -97,4 +110,99 @@ main footer a {
     display: block;
     text-align: center;
     color: #000;
+}
+
+main form {
+    margin-top: 1.6rem;
+}
+
+main form label {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    margin: 1.0rem 0 0.4rem 0;
+    display: block;
+
+}
+
+main form :is(input, select) {
+    width: 48.9rem;
+    height: 5.5rem;
+    padding: 0 3.0rem 0 1.5rem;
+    font-size: 1.4rem;
+
+    background: #ffffff;
+    border: var(--default-border);
+    border-radius: var(--border-radius);
+}
+
+main form select {
+    appearance: none;
+}
+
+main form .select-div {
+    position: relative;
+}
+
+.select-div .icon-container {
+    position: absolute;
+    top: 50%;
+    right: 1.0rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.select-div i {
+    font-size: 2.4rem;
+    color:  #20B2AA;
+    width: 4.0rem;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+main form .select-div::after {
+    top: 1.6rem;
+    left: 1.6rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    position: absolut;
+    z-index: 1;
+    color:  #20B2AA;
+}
+
+main form button {
+    margin-top: 0.4rem;
+    color:  #20B2AA;
+    border: none;
+    background-color: transparent;
+    font-size: 2.4rem;
+
+    cursor: pointer;
+
+    &:hover {
+        color: #FF5678;
+        transition: background-color 0.2s;
+      }
+
+}
+
+main form div button {
+    border: 0;
+    font-size: 2.4rem;
+    height: 5.5rem;
+    background-color: #20B2AA;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 0.6rem;
+    margin-top: 2.4rem;
+
+    cursor: pointer;
+
+    &:hover {
+        background: #FF5678;
+        transition: background-color 0.2s;
+        color: #fff;
+      }
+
 }
